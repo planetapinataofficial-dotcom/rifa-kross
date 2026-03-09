@@ -1,18 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Rifa Korg Kross 2</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#111;
+color:white;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(7,60px);
+gap:10px;
+justify-content:center;
+margin-top:30px;
+}
+
+.num{
+background:#1e88e5;
+padding:15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.num:hover{
+background:#1565c0;
+}
+
+</style>
+
 </head>
 
-<body style="font-family:Arial; text-align:center; background:#111; color:white;">
+<body>
 
 <h1>🎹 Rifa Korg Kross 2</h1>
 
 <p>$500 por número</p>
 
-<p>Escríbeme por WhatsApp para apartar tu número</p>
+<p>Selecciona tu número para apartarlo</p>
 
-<a href="https://wa.me/3312337816">Apartar número</a>
+<div class="grid" id="numeros"></div>
+
+<script>
+
+let contenedor=document.getElementById("numeros");
+
+for(let i=1;i<=70;i++){
+
+let boton=document.createElement("div");
+
+boton.className="num";
+
+boton.innerText=i;
+
+boton.onclick=()=>{
+
+let telefono="3312337816";
+
+let mensaje=`Hola quiero apartar el número ${i} de la rifa del Kross 2`;
+
+window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`);
+
+};
+
+contenedor.appendChild(boton);
+
+}
+
+</script>
 
 </body>
 </html>
