@@ -51,7 +51,7 @@ background:#1565c0;
 <script>
 
 let contenedor=document.getElementById("numeros");
-
+let vendidos = [5,12,18];
 for(let i=1;i<=70;i++){
 
 let boton=document.createElement("div");
@@ -59,7 +59,11 @@ let boton=document.createElement("div");
 boton.className="num";
 
 boton.innerText=i;
-
+if(vendidos.includes(i)){
+  boton.style.background="black";
+  boton.style.cursor="not-allowed";
+  boton.onclick=null;
+}
 boton.onclick=()=>{
 
 let telefono="3312337816";
