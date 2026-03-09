@@ -43,6 +43,7 @@ background:#1565c0;
 <h1>🎹 Rifa Korg Kross 2</h1>
 <img src="KROSS261.png" width="350">
 <p>$500 por número</p>
+ <p>Sorteo: 30 de junio</p> 
 <p id="contador"></p>
 <div style="width:300px;height:20px;background:#444;margin:auto;border-radius:10px;">
   <div id="barra" style="height:20px;background:#2ecc71;width:0%;border-radius:10px;"></div>
@@ -69,6 +70,8 @@ boton.innerText=i;
 if(vendidos.includes(i)){
   boton.style.background="black";
   boton.style.cursor="not-allowed";
+  boton.innerText=i + "\nVENDIDO";
+  boton.style.fontSize="12px";
   boton.onclick=null;
 }
 boton.onclick=()=>{
