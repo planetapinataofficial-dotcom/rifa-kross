@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rifa Korg Kross 2</title>
 
 <style>
@@ -16,16 +16,18 @@ color:white;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(7,60px);
+grid-template-columns:repeat(auto-fit,minmax(60px,1fr));
 gap:10px;
 justify-content:center;
 margin-top:30px;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .num{
-background:#2ecc71;
-padding:15px;
-border-radius:8px;
+padding:20px;
+font-size:20px;
 cursor:pointer;
 font-weight:bold;
 }
