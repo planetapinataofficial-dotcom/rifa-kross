@@ -44,6 +44,9 @@ background:#1565c0;
 <img src="KROSS261.png" width="350">
 <p>$500 por número</p>
 <p id="contador"></p>
+<div style="width:300px;height:20px;background:#444;margin:auto;border-radius:10px;">
+  <div id="barra" style="height:20px;background:#2ecc71;width:0%;border-radius:10px;"></div>
+</div>  
 <p>Selecciona tu número para apartarlo</p>
 
 <div class="grid" id="numeros"></div>
@@ -52,6 +55,8 @@ background:#1565c0;
 
 let contenedor=document.getElementById("numeros");
 let vendidos = [5,12,18];
+ let progreso = (vendidos.length / 70) * 100;
+document.getElementById("barra").style.width = progreso + "%"; 
 document.getElementById("contador").innerText =
 vendidos.length + " de 70 números vendidos";  
 for(let i=1;i<=70;i++){
