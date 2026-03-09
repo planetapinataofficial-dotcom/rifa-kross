@@ -23,7 +23,7 @@ margin-top:30px;
 }
 
 .num{
-background:#1e88e5;
+background:#2ecc71;
 padding:15px;
 border-radius:8px;
 cursor:pointer;
@@ -43,7 +43,7 @@ background:#1565c0;
 <h1>🎹 Rifa Korg Kross 2</h1>
 <img src="KROSS261.png" width="350">
 <p>$500 por número</p>
-
+<p id="contador"></p>
 <p>Selecciona tu número para apartarlo</p>
 
 <div class="grid" id="numeros"></div>
@@ -52,6 +52,8 @@ background:#1565c0;
 
 let contenedor=document.getElementById("numeros");
 let vendidos = [5,12,18];
+document.getElementById("contador").innerText =
+vendidos.length + " de 70 números vendidos";  
 for(let i=1;i<=70;i++){
 
 let boton=document.createElement("div");
