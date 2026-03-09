@@ -43,7 +43,8 @@ background:#1565c0;
 <h1>🎹 Rifa Korg Kross 2</h1>
 <img src="KROSS261.png" width="350">
 <p>$500 por número</p>
- <p>Sorteo: 30 de junio</p> 
+ <p>Sorteo: 30 de junio</p>
+<p id="tiempo"></p> 
 <p id="contador"></p>
 <div style="width:300px;height:20px;background:#444;margin:auto;border-radius:10px;">
   <div id="barra" style="height:20px;background:#2ecc71;width:0%;border-radius:10px;"></div>
@@ -87,8 +88,28 @@ window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`);
 contenedor.appendChild(boton);
 
 }
+let fecha = new Date("2026-06-30 20:00:00").getTime();
 
+setInterval(function(){
+
+let ahora = new Date().getTime();
+
+let diferencia = fecha - ahora;
+
+let dias = Math.floor(diferencia / (1000*60*60*24));
+
+let horas = Math.floor((diferencia % (1000*60*60*24)) / (1000*60*60));
+
+let minutos = Math.floor((diferencia % (1000*60*60)) / (1000*60));
+
+document.getElementById("tiempo").innerText =
+"Sorteo en: " + dias + " días " + horas + "h " + minutos + "m";
+
+},1000);
 </script>
-
+<a href="https://wa.me/5213312337816"
+style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;text-decoration:none;font-size:24px;">
+💬
+</a>
 </body>
 </html>
